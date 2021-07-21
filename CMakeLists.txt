@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.5)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+project(GFA VERSION 0.1 LANGUAGES CXX)
+
+file(GLOB GFA_SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} */*.cpp )
+add_library(GFA ${GFA_SOURCES})
+target_include_directories(GFA PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
