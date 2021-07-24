@@ -19,6 +19,7 @@ class RGBColorBuffer
         const Size & height() const;
 
         void setPixel(const Index &x, const Index &y, const RGBColor &col);
+        RGBColor getPixel(const Index &x, const Index &y);
 
     private:
         Size    width_;

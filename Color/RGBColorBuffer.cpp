@@ -35,9 +35,22 @@ const GFA::Size & GFA::RGBColorBuffer::height() const
 }
 
 void GFA::RGBColorBuffer::setPixel(
-    const GFA::Index &, const GFA::Index &, const GFA::RGBColor &)
+    const GFA::Index &x, const GFA::Index &y, const GFA::RGBColor &col)
 {
-    // NeedFis: Dees to be set up
+    if (x >= width_ || y >= height_) return;
+    dataPtr_[x*4 + y*width_*4] = col.r;
+    dataPtr_[x*4 + 1 + y*width_*4] = col.g;
+    dataPtr_[x*4 + 2 + y*width_*4] = col.b;
+    dataPtr_[x*4 + 3 + y*width_*4] = col.a;
 }
 
+GFA::RGBColor GFA::RGBColorBuffer::getPixel(const Index &x, const Index &y)
+{
+    GFA::RGBColor col;
+    col.r = dataPtr_[x*4 + y*width_*4];
+    col.g = dataPtr_[x*4 + 1 + y*width_*4];
+    col.b = dataPtr_[x*4 + 2 + y*width_*4];
+    col.a = dataPtr_[x*4 + 3 + y*width_*4];
+    return col;
+}
 
