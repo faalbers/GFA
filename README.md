@@ -19,7 +19,7 @@ git submodule update --init
 ### build
 
 ```
-cd FaaRay
+cd GFA
 cmake -B build -D CMAKE_BUILD_TYPE:STRING=Release
 cmake --build build --config Release -j 10 --
 ```
