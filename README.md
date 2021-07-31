@@ -1,5 +1,3 @@
-Graphic Data Library by Frank Aalbers
-
 # GFA
 
 Graphic Data Library by Frank Aalbers
